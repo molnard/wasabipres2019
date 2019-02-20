@@ -17,7 +17,7 @@ How is this done? It starts with the fiat onramps, where an exchange collects in
 
 This is more than hypothetical. Exchanges have significant insight into the flows of Bitcoin — enough to successfully deter hacks, stolen funds, and regularly file suspicious activity reports (as all US exchanges are required to). Companies like Chainalysis provide surveillance services to law enforcement and various three-letter agencies, reportedly earning more than $5.7M in 2018 via government contracts.
 
-Still not care about this? You are doing nothing illegal, no darknet connection, you are clean like the
+Still not care about this? You are doing nothing illegal, no darknet connection, you are clean like the brand new snow.
 # Story
 In the oldern days I sold bitcoins face to face. The buyer bought it and just for fun I decided to follow my coins just to see where it will land. One day I found that the final buyer has 32 BTC and sent that to BITMEX. That a lot of money. 
 Every buy or sell you will compromise one of your addresses.
