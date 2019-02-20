@@ -2,7 +2,7 @@
 
 ![alt text](https://wasabiwallet.io/images/wasabi_wallet_logo_2-1.png)
 
-Fungibility!
+# Fungibility!
 Sound familiar but what does it mean exactly?
 Fungibility is a principle in economics it says a token of value such a currency coin is indistinguishable of any other coins. Either you can’t say I would accept US dollars but only if their serial number is odd, if it is even that is evil money I won't touch it. If you say that you are breaking the law. The law requires you to threat equally and the government can't say that either. So that creates fungibility. Every dollat billet is fully exchangable of any other dollat billet for equal. That principal is fundamental to currency.
 
@@ -19,8 +19,9 @@ This is more than hypothetical. Exchanges have significant insight into the flow
 
 Still not care about this? You are doing nothing illegal, no darknet connection, you are clean like the brand new snow.
 # Story
-In the oldern days I sold bitcoins face to face. The buyer bought it and just for fun I decided to follow my coins just to see where it will land. One day I found that the final buyer has 32 BTC and sent that to BITMEX. That a lot of money. 
+In the oldern days I sold bitcoins face to face. The buyer bought it and just for fun I decided to follow my coins just to see where it will land. One day I found that the final buyer has 32 BTC and sent that to BITMEX. That a lot of money.
 Every buy or sell you will compromise one of your addresses.
+
 When you are sending money, are you ready to share every transaction connected to it in the past?
 When you are receiving money, are you ready to share every transaction connected to it in the future? 
 Even if you are doing nothing illegal (as most of the bitcoin users) that sound terrifying at least for me. 
@@ -28,11 +29,25 @@ Do we need fungibility? Yes but we need more. WE NEED Privacy!
 
 [Picture about privacy]
 
+# Privacy
+https://youtu.be/XORDEX-RrAI?t=969
+
+past mixers, thumblebit, joinmarket, 
+
+# pros, cons
+
+why wasaby
+
+coinjoin
+
+ip - tor
+anynomity loves company - anonimity set
 
 
 
 
 
-Credits Sources
+
+# Credits Sources
 
 Haseeb Qureshi
