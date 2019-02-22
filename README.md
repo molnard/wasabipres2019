@@ -32,7 +32,11 @@ What can we do to keep our privacy? There is a lot to do
 https://youtu.be/XORDEX-RrAI?t=969
 
 _Story: centralized mixers_
-In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you. For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it from you.
+In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you. For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it from you. Tricky isn't it? We have to take special care 
+
+_Decentralized mixers_
+Just to mention without going into the datails 
+Thumblebit is a unidirectional payment hub something like lightning network but without the network part and it is anonymus. Joinmarket is instant Thumblebit can archive higher anonimity set. 
 
 The CoinJoin Transaction
 
@@ -45,6 +49,23 @@ coinjoin
 
 ip - tor
 anynomity loves company - anonimity set
+
+
+
+# Anonymity network
+
+We need TOR. No TOR library for dotnet 
+
+# Network analysis
+
+There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together. But with SPV wallet it is a little more better. Jonas Nick has deaninimyzed a lot of SPV wallets he said that give me one of your bitcoin address and I give back 70 percent of your wallett addresses. 
+Bloom filtering https://coinjournal.net/blockstreams-jonas-nick-with-7-tips-for-better-bitcoin-user-privacy/
+That is pretty scary. Wasabi solution is to download full blocks instead of querying bitcoin addresses. Kind of a Lightish wallet. Random node querying. 
+BIP157 - BIP158
+You have a constant set of filters you get if from some source and from thoose filters you can figure out which block you are interested in and you get the blocks from random nodes. So basically no on can figure out which transactions you are interested in. Even the blocks because you are using Tor and changing Tor circuits it is just really hard if not impossible. So this is the first light wallet architecture thats truly light wallet architecture that does not ruin your privacy. Because bitcoin core nodes does not support it yet so we have our backend that sends the filters to the clients and thats how it works. 
+
+
+# About Wasabi
 
 
 
