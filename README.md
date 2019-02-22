@@ -68,6 +68,8 @@ BIP158 new proposal which is in the process of getting finalized. It is apparent
 
 You have a constant set of filters you get if from some source and from thoose filters you can figure out which block you are interested in and you get the blocks from random nodes. So basically no on can figure out which transactions you are interested in. Even the blocks because you are using Tor and changing Tor circuits it is just really hard if not impossible. So this is the first light wallet architecture thats truly light wallet architecture that does not ruin your privacy. Because bitcoin core nodes does not support it yet so we have our backend that sends the filters to the clients and thats how it works. 
 
+You can run a fullnode too and configure Wasabi to use that.
+
 
 # About Wasabi
 
