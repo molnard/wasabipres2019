@@ -2,45 +2,42 @@
 
 ![alt text](https://wasabiwallet.io/images/wasabi_wallet_logo_2-1.png)
 
+_Odd dollar example_
 # Fungibility!
 Sound familiar but what does it mean exactly?
-Odd dollar example
 Fungibility is a principle in economics it says a token of value such a currency coin is indistinguishable of any other coins. Either you can’t say I would accept US dollars but only if their serial number is odd, if it is even that is evil money I won't touch it. If you say that you are breaking the law. The law requires you to threat equally and the government can't say that either. So that creates fungibility. Every dollat billet is fully exchangable of any other dollat billet for equal. That principal is fundamental to currency.
-1BTC = 1 BTC
-![alt text](https://github.com/molnard/wasabipres2019/blob/master/MITBTCvsBTC.JPG)
+
 If you visit the bitcoin.mit.edu website you will see the following statement. If there is no fungibility that statement would not be correct.
-Consecvence
-If you destroy fungibility you destroy the means of exchange function of the currency. For example, in bitcoin you can create a blacklist or a whitelist. What it does that it imposes a burden on everyone. If you receive money now, you don’t know if it is real unless you also check that against the latest version of the blacklist to see if it not one of the banned ones. You can’t do that, that does not scale. If there was a mass centralization in mining to adopt that kind of policy that would be a destructive event for bitcoin.
 
-Szedjek ki egy két érdekes dolgot amit elmondanék! 2 percre kell redukálni a bevezetést
-Is that really what we concerned about today? Do you I care with fungibility? In my opinion is not really! (Of course in the long term I care about that) BUT for today I would like to use my bitcoins without any restriction. 
-Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect. Bitcoin is actually pseudonymous. The distinction is crucial: under a cryptographic pseudonym, your behavior can still be tracked.
+_Consequence_
+If you destroy fungibility you destroy the means of exchange function of the currency. For example, in bitcoin you can create a blacklist or a whitelist. __What it does that it imposes a burden on everyone.__ If you receive money now, you don’t know if it is real unless you also check that against the latest version of the blacklist to see if it not one of the banned ones. You can’t do that, that does not scale. If there was a mass centralization in mining to adopt that kind of policy that would be a destructive event for bitcoin.
 
-How is this done? It starts with the fiat onramps, where an exchange collects information on you through their KYC(KOYC?) process. This information that is often shared with other exchanges when investigating suspicious activity. Even once take your Bitcoin onto the mainnet, your activity can still be tracked. Heuristics and clustering analysis are often used to identify exchanges, mixers, and other common blockchain services you use. Supernodes connect to large swathes of the Bitcoin network and correlate transactions with their originating IPs. Even with meticulous opsec and address rotation (which most people don’t do), if you ever want to turn your Bitcoin back into fiat, that offramp is just as highly regulated. Often you will be turned away if your Bitcoin appears tainted by signs of illegal activity.
-But you might care about it 
+_Personal implications_
+Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect. Bitcoin is actually pseudonymous(no p in the beginning). The distinction is crucial: under a cryptographic pseudonym, your behavior can still be tracked. KYC exchanges collect personal information which is shared with other exchanges, Heuristics and clustering analysis to identify exchanges, mixers, supernodes connect to large swathes and correlate transaction with their originating IPs.
+Companies like Chainalysis provide surveillance services to law enforcement and various three-letter agencies, reportedly earning more than about 6M dollar in 2018 via government contracts.
 
-This is more than hypothetical. Exchanges have significant insight into the flows of Bitcoin — enough to successfully deter hacks, stolen funds, and regularly file suspicious activity reports (as all US exchanges are required to). Companies like Chainalysis provide surveillance services to law enforcement and various three-letter agencies, reportedly earning more than $5.7M in 2018 via government contracts.
+Is that really what we concerned about today? Do you care with fungibility? In my opinion: not really! (Of course in the long term I care) BUT for today I would like to use my bitcoins without any restrictions. You are doing nothing illegal, no darknet connections, you are clean like the brand new snow. 
 
-Still not care about this? You are doing nothing illegal, no darknet connection, you are clean like the brand new snow.
-# Story
+When you are sending money, are you ready to share every transactions connected to it in the past?
+When you are receiving money, are you ready to share every transactions connected to it in the future? 
+Even if you are doing nothing illegal (as most of the bitcoin users) __even so__ I do not feel comfortable to share that information.
+__Do we need fungibility? Yes but we need more. WE NEED Privacy!__
+ 
+_Story: traceing a coin_
 In the oldern days I sold bitcoins face to face. The buyer bought it and just for fun I decided to follow my coins just to see where it will land. One day I found that the final buyer has 32 BTC and sent that to BITMEX. That a lot of money.
 Every buy or sell you will compromise one of your addresses.
-not a true story! 
-
-When you are sending money, are you ready to share every transaction connected to it in the past?
-When you are receiving money, are you ready to share every transaction connected to it in the future? 
-Even if you are doing nothing illegal (as most of the bitcoin users) that sound terrifying at least for me. 
-
-Do we need fungibility? Yes but we need more. WE NEED Privacy! - Ez maradhat
-
-[Picture about privacy]
 
 # Privacy
+What can we do to keep our privacy? There is a lot to do
 https://youtu.be/XORDEX-RrAI?t=969
 
-past mixers(traditional bitcoin mixer, bitcoin fog, selective scam you send the money it mixes if you are sending more then it will take it it was working for years good feedback after a while it started scamming), thumblebit(technoligy stratis breez), joinmarket(still running), 
+_Story: centralized mixers_
+In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you. For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it from you.
 
-# pros, cons
+The CoinJoin Transaction
+
+
+
 
 why wasaby
 
@@ -51,9 +48,8 @@ anynomity loves company - anonimity set
 
 
 
-
-
-
 # Credits Sources
 
 Haseeb Qureshi
+
+# Possible questions
