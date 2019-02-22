@@ -58,10 +58,14 @@ We need TOR. No TOR library for dotnet
 
 # Network analysis
 
-There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together. But with SPV wallet it is a little more better. Jonas Nick has deaninimyzed a lot of SPV wallets he said that give me one of your bitcoin address and I give back 70 percent of your wallett addresses. 
-Bloom filtering https://coinjournal.net/blockstreams-jonas-nick-with-7-tips-for-better-bitcoin-user-privacy/
-That is pretty scary. Wasabi solution is to download full blocks instead of querying bitcoin addresses. Kind of a Lightish wallet. Random node querying. 
-BIP157 - BIP158
+There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together.
+
+_story_
+Jonas Nick has deaninimyzed a lot of SPV wallets he said that give me one of your bitcoin address and I give back 70 percent of your wallett addresses. That is pretty scary.
+
+_SPV filtering_
+BIP158 new proposal which is in the process of getting finalized. It is apparently in discussion. The way how it works you download filters you do not tell the nodes what to filter and than you can figure out what block are relevant to my use case to my wallet. 
+
 You have a constant set of filters you get if from some source and from thoose filters you can figure out which block you are interested in and you get the blocks from random nodes. So basically no on can figure out which transactions you are interested in. Even the blocks because you are using Tor and changing Tor circuits it is just really hard if not impossible. So this is the first light wallet architecture thats truly light wallet architecture that does not ruin your privacy. Because bitcoin core nodes does not support it yet so we have our backend that sends the filters to the clients and thats how it works. 
 
 
