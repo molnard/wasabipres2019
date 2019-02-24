@@ -24,7 +24,7 @@ In the oldern days I sold bitcoins face to face. The buyer bought it and just fo
 Every buy or sell you will expose one of your addresses.
 
 # Privacy
-What can we do to keep our privacy? There is a lot to do
+What can we do to keep our privacy? There is a lot to do we will see it in the next part.
 https://youtu.be/XORDEX-RrAI?t=969
 
 _Story: centralized mixers_
@@ -33,6 +33,21 @@ In the past, traditional bitcoin mixers provide centralized way to obfuscate the
 _Decentralized mixers_
 Just to mention without going into the datails 
 Thumblebit is a unidirectional payment hub something like lightning network but without the network part and it is anonymus. Joinmarket is instant Thumblebit can archive higher anonimity set. 
+
+# Wasabi wallet
+
+I would like to show how do we achive privacy in a wallet called Wasabi wallet. What kind of technology did we use / implement or develop for that purpose. My presentation plan is to go trough an casual day of a bitcoin user.
+
+Let's say you are done with the installation.
+_wallet generation_
+The first step is to generate a new one which means the generation of the master key which will be stored on your device not in the cloud or elsewhere. Meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
+You will have your mnemonic words for backup/restore purposes.
+The wallet file is encrypted in a way that if someone manages to get it still useless without the password. 
+
+_receiving and sending coins_
+Address reuse harms the privacy of not only yourself, but also others - including many not related to the transaction. When addresses are re-used, they allow others to much more easily and reliably determine that the address being reused is yours. Wasabi is a deterministic wallet so it generating new addresses for receviving and for change.
+Input joining. Coin control means you are not only seeing the total balance of your wallet but the individual coins you own. Why it is important? Every time you send/receive coins you should know the history of it. If you do not want to connect 
+
 
 The CoinJoin Transaction
 
