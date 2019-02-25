@@ -2,6 +2,8 @@
 
 ![alt text](https://wasabiwallet.io/images/wasabi_wallet_logo_2-1.png)
 
+Greetings everyone! My name is David Molnar and I would like to speak about privacy in bitcoin and how did Wasabi wallet achive that goal. Let's start with why privacy is important.
+
 _Odd dollar example_
 # Fungibility!
 Sound familiar but what does it mean exactly?
@@ -33,7 +35,7 @@ Thumblebit is a unidirectional payment hub something like lightning network but 
 
 # Wasabi wallet
 
-I would like to show how do we achive privacy in a wallet called Wasabi wallet. What kind of technology did we use / implement or develop for that purpose. My presentation plan is to go trough an casual day of a bitcoin user.
+I would like to show how do we achive privacy in a wallet called Wasabi wallet. What kind of technology did we use / implement or develop for that purpose. My presentation plan is to go trough a casual day of a bitcoin user.
 
 Let's say you are done with the installation.
 _wallet generation_
@@ -46,28 +48,20 @@ Address reuse harms the privacy of not only yourself, but also others - includin
 Input joining. Coin control means you are not only seeing the total balance of your wallet but the individual coins you own. Why it is important? You should be aware of that which coin or coins you will use for that transaction what was the history of that coin. You have control over that eventhou you can tag coins when sending or receiving and Wasabi will automatically build the history of that coin. But we still have a chain how to break it?
 
 _coinjoin_
-Let's take the previous example. You are avoiding address reuse, using the coincontrol and labeling and the history of your coins are growing. That is good but now you have to join together two or more coins to have enough money to pay for something. You will expose some part or all of your transaction history involved by your coins. Also you can expose the total amount of money you have. Somehow you have to break the chain of the transacition history and here comes CoinJoin/Mixing into the picture. CoinJoin has several inputs and several outputs. If the CoinJoin contructed in a "good way" than one cannot tell which input corresponds to a certain output. So your history cannot be tracked back. 
-
+Let's take the previous example. You are avoiding address reuse, using the coincontrol and labeling and the history of your coins are growing. That is good but now you have to join together two or more coins to have enough money to pay for something. You will expose some part or all of your transaction history involved by your coins. Also you can expose the total amount of money you have. Instead of paying the landlord direcly with one or more of your coins you have to use some obfuscation to ensure your privacy.
 
 _mixers_
-Anonymity loves company: you cannot mix by yourself. If coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. We need company.
+Anonymity loves company: you cannot mix by yourself. If coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. We need company to make a reliable coinjoin.
 
 Decentralized mixer: in the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it. Tricky isn't it? 
 
 Fixed denominations: CoinJoin outputs should be equal regarding the amounts. Every attempts to change this is to risk that the CoinJoin can be deanomyzed. Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. (Sharedcoin works like this)
 
+CoinJoin rounds: contructing the CoinJoin transaction requires an exact procedure to follow. For example the first is to collect enought participants to construct the inputs. Later we will go into the details. 
+
+Chaumian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants. 
 
 
-
-
-The CoinJoin Transaction
-
-Smart labeling system
-
-
-why wasaby
-
-coinjoin
 
 ip - tor
 anynomity loves company - anonimity set
