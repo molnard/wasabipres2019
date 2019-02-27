@@ -4,21 +4,27 @@
 
 Greetings everyone! My name is David Molnar and I would like invite you for a coffee. A virtual coffee of course because no way I have as much coffee as I would require to invite you all.
 
-There we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile you are drinking your coffee which is tasty and hot as it meant to be let's think what happened in the point of privacy view. 
+There we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile you are drinking your coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy view. 
 
 # Wallet
 You are using some kind of wallet for the transaction. 
-__Web wallets__ In the privacy point of view this is the worst you can do.  
+__Web wallets__ Everyt actions you take are forwarded to a server. Thin client like wallets are the same they are just providing a user interface but transaction related operations are running on the servers which can easily spy on you. In the privacy point of view this is the worst you can do.
 __Key storage__ To sign the transaction for that coffee you have to have a private key. It must be stored on your device. Meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
-__Encrypted secret__ the wallet file is encrypted in a way that if someone manages to get it still useless without your password. 
-__Address reuse__ harms the privacy of not only yourself, but also others - including many not related to the transaction. When addresses are re-used, they allow others to much more easily and reliably determine that the address being reused is yours. Wasabi is a deterministic wallet so it generating new addresses for receviving and for change.
-__Input joining__ Coin control means you are not only seeing the total balance of your wallet but the individual coins you own. Why it is important? You should be aware of that which coin or coins you will use for that transaction what was the history of that coin. You have control over that eventhou you can tag coins when sending or receiving and Wasabi will automatically build the history of that coin. But we still have a chain how to break it?
+__Encrypted secret__ If the key is stored locally then the wallet file is encrypted in a way that if someone manages to get it still useless without your password. 
+__Address reuse__ It harms the privacy of not only yourself, but also others - including many not related to the transaction. When addresses are re-used, they allow others to much more easily and reliably determine that the address being reused is yours. Wasabi is a deterministic wallet so it is generating new addresses for receviving and for change.
+__Input joining__ Coin control means you are not only seeing the total balance of your wallet but the individual coins you own. Why it is important? You should be aware of that which coin or coins you will use for that transaction what was the history of that coin. You have control over that eventhou you can add labels to coins when you are sending or receiving. Wasabi will automatically append the labels according to the transactions related to that coin.
+__Trust developers__ Let's say we have found a wallet is fulfilling the mentioned critereas. How can you verify that? Check on the website? Trust in the creator of the wallet? In the world of bitcoin we have a good saying for that: "don't trust, verify". The mechanism of a software is fully determined by the source code. If you are compiling your own wallet from that you can be sure it will work according to that. Even if you are not a programmer so you have to trust in someone on a level at least the trust is distributed among the programmers of the world like in any open-source project.
 
 # Nodes
 __Supernodes__
-Lightweight wallets generally query a third-party server which can easily spy on you.
 
-__SPV filtering__ BIP158 new proposal which is in the process of getting finalized. It is apparently in discussion. The way how it works you download filters you do not tell the nodes what to filter and than you can figure out what block are relevant to my use case to my wallet. 
+__Special nodes__
+There are servers specially created for lightwallets Lightweight wallets generally query a third-party server which can easily spy on you.
+There are servers specially created run Electrum servers
+
+__Get balance requests SPV filtering__ 
+
+BIP158 new proposal which is in the process of getting finalized. It is apparently in discussion. The way how it works you download filters you do not tell the nodes what to filter and than you can figure out what block are relevant to my use case to my wallet. 
 
 You have a constant set of filters you get if from some source and from thoose filters you can figure out which block you are interested in and you get the blocks from random nodes. So basically no on can figure out which transactions you are interested in. Even the blocks because you are using Tor and changing Tor circuits it is just really hard if not impossible. So this is the first light wallet architecture thats truly a light wallet that does not ruin your privacy. Because bitcoin core nodes does not support it yet so we have our backend that sends the filters to the clients and thats how it works. 
 
