@@ -6,6 +6,9 @@ Hi everyone! My name is David Molnar and I would like invite you for a coffee. A
 
 So there we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile you are drinking your coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy view during the transaction.
 
+# Customer service
+If you are buying/selling with bitcoin you are exposing your identity which could be connected to your wallet. If you are doing it "offline" you are exposing your identity to the 
+
 # Wallet
 To pay you are using some kind of wallet for the transaction maybe a webwallet or a lightwallet. The problem is that
 __Light wallets__ Everyt actions you take are forwarded to a server. Thin client like wallets are the same they are just providing a user interface but transaction related operations are running on the servers which can easily spy on you. 
