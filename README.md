@@ -14,13 +14,15 @@ __Encrypted secret__ If the key is stored locally then the wallet file is encryp
 __Address reuse__ It harms the privacy of not only yourself, but also others - including many not related to the transaction. When addresses are re-used, they allow others to much more easily and reliably determine that the address being reused is yours. Wasabi is a deterministic wallet so it is generating new addresses for receviving and for change.
 __Input joining__ Coin control means you are not only seeing the total balance of your wallet but the individual coins you own. Why it is important? You should be aware of that which coin or coins you will use for that transaction what was the history of that coin. You have control over that eventhou you can add labels to coins when you are sending or receiving. Wasabi will automatically append the labels according to the transactions related to that coin.
 __Trust developers__ Let's say we have found a wallet is fulfilling the mentioned critereas. How can you verify that? Check on the website? Trust in the creator of the wallet? In the world of bitcoin we have a good saying for that: "don't trust, verify". The mechanism of a software is fully determined by the source code. If you are compiling your own wallet from that you can be sure it will work according to that. Even if you are not a programmer so you have to trust in someone on a level at least the trust is distributed among the programmers of the world like in any open-source project.
+__Company behind__ There is a legal entity behind. 
 
 # Nodes
 __Supernodes__
-
+There are nodes in the network which are collecting metadata about the origin of any network traffic. If you are lucky you didn't bump into any network analysis server, but you likely will in the future. 
 __Special nodes__
-There are servers specially created for lightwallets Lightweight wallets generally query a third-party server which can easily spy on you.
-There are servers specially created run Electrum servers
+There are servers specially created for lightwallets generally query a third-party server which can easily spy on you.
+__Transaction propagation__
+The IP you are broadcasting your transaction with.
 
 __Get balance requests SPV filtering__ 
 
