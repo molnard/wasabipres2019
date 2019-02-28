@@ -4,6 +4,8 @@
 
 Hi everyone! My name is David Molnar and I would like invite you for a coffee. A virtual coffee of course because no way I have as much coffee as I would require to invite you all.
 
+## Coffee Shop
+
 So there we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile you are drinking your coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy view during the transaction.
 
 # Customer service
@@ -34,8 +36,7 @@ There are also some special nodes, servers which are dedicated for a certain lig
 __Get balance requests SPV filtering__
 There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together. For example to determine the total UTXO you have in the wallet addresses are queried in the same time from the same source. Bloom filtering is not helping on this because the filters are on server side so you still exposing your addresses.
 
-Jonas Nick has deaninimyzed a lot of SPV wallets and he said that give me one of your bitcoin address (SPV wallet) and I give back 70 percent of your wallett addresses. That is pretty scary.
-You should run a full node which is costly OR    
+Jonas Nick has deanonimyzed a lot of SPV wallets and he said that give me one of your bitcoin address (SPV wallet) and I give back 70 percent of your wallett addresses. That is pretty scary. To prevent that you should run a full node which is costly OR    
 there is another option. A new proposal BIP158 which is in the process of getting finalized. It is apparently in discussion. What it does is that you are not downloading the whole blockchain but filters. The filters are contructed in a way that your wallet can determine which blocks are related. This is happening on client side. So instead of requesting transactions it is requesting blocks even more it is requesting every block from random nodes. So basically no on can figure out which transactions you are interested in.
 
 With wasabi you have a constant set of filters you get it from some source additionally it is using Tor and changing Tor circuits on every request. So this is the first light wallet architecture thats truly a light wallet that does not ruin your privacy. Because bitcoin core nodes does not support it yet we have to implement it on our backend that sends the filters to the clients and thats how it works. Another option is to use a fullnode. Wasabi is also capable for that.
@@ -43,6 +44,24 @@ With wasabi you have a constant set of filters you get it from some source addit
 # BlockChain and transaction graph
 
 Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect. Bitcoin is actually pseudonymous(no p in the beginning). The distinction is crucial: under a cryptographic pseudonym, your behavior can still be tracked. KYC exchanges collect personal information which is shared with other exchanges, Heuristics and clustering analysis to identify exchanges, mixers, supernodes connect to large swithes and correlate transaction with their originating IPs. 
+
+## CoinJoin
+
+Ok so at this point most of the privacy problems are solved on an acceptable level by using existing technologies like TOR and following clever protocols. We handled Wallet leakage, networks and part of blockchain analysis but one more thing is remained, transaction chain is still there and is it traceable. So we have to obfuscate the transaction graph. 
+
+_mixers_
+Can someone do this alone? Well not really. The problem is that even if you are generating a lot of transaction with varying inputs and outputs the begin and the end transaction could be identified. For example if coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. By the way transaction generation could be expensive. Anonymity loves company: you cannot mix by yourself.
+
+In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it. Decentralized coinjoin is the solution for that.
+
+CoinJoin outputs should be equal regarding the amounts. Every attempts to change this is to risk that the CoinJoin can be deanomyzed. Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. (Sharedcoin works like this) we need fixed denominations.
+
+Basically it works as follows. Wait enought participants to register into the coinjoin. They are just sending confirmed utxos as the inputs. If there is enought participants move forward construct the coinjoin transaction. Inputs and outputs are ready but the signatures are missing so send this partially constructed transaction back to the users let them verify it - for example if they are gettign back enough bitcoins. If it is OK they sign their inputs send it back to the coordinator where the transaction will be propagated to the network. Roughly speaking this is how it works.   
+
+
+Chaumian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants.
+
+
 
 _Odd dollar example_
 # Fungibility!
@@ -74,20 +93,11 @@ Just to mention without going into the datails
 Thumblebit is a unidirectional payment hub something like lightning network but without the network part and it is anonymus. Joinmarket is instant Thumblebit can archive higher anonimity set. 
 
 # Wasabi wallet
-
+ 
 _coinjoin_
 Let's take the previous example. You are avoiding address reuse, using the coincontrol and labeling and the history of your coins are growing. That is good but now you have to join together two or more coins to have enough money to pay for something. You will expose some part or all of your transaction history involved by your coins. Also you can expose the total amount of money you have. Instead of paying the landlord direcly with one or more of your coins you have to use some obfuscation to ensure your privacy.
 
-_mixers_
-Anonymity loves company: you cannot mix by yourself. If coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. We need company to make a reliable coinjoin.
 
-Decentralized mixer: in the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it. Tricky isn't it? 
-
-Fixed denominations: CoinJoin outputs should be equal regarding the amounts. Every attempts to change this is to risk that the CoinJoin can be deanomyzed. Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. (Sharedcoin works like this)
-
-CoinJoin rounds: contructing the CoinJoin transaction requires an exact procedure to follow. For example the first is to collect enought participants to construct the inputs. Later we will go into the details. 
-
-Chaumian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants. 
 
 
 
