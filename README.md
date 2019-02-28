@@ -60,13 +60,13 @@ Basically it works as follows. Wait enought participants to register into the co
 
 Why coinjoin is good for privacy?
 Because from the equal outputs of the CoinJoin you cannot tell which input correspons to that for sure. If there is 4 paticipants in the coinjoin then you have a quater probability to tell that. In this case we are saying that the anonimity set is four. In the reality nobody will register with the exact amount of the denomination so beside the coinjoined coin you will get back a change which is unmixed. With that amount you can participate in another round meaning that with this particular example if you have 8 bitcoins than you will have 8 rounds to anonymize you total amount. You can also do that with CoinJoined coins to increase the privacy of a coin. 
-Later wasabi added a feature called: "unequal amount mixing" which basically meaning that the coordinator is trying to mix the remaining amounts if there is enough to do that. In that case the anonimity set will be lower. 
+Later wasabi added a feature called: "unequal amount mixing" which basically meaning that the coordinator is trying to mix the remaining amounts if there is enough to do that. In that case the anonimity set will be lower but it will be faster and we are getting more anonymity for a slightly more fee in generally it is cheaper.
 
-With this your privacy on the blockchain is increased. Are we in safe now? Unfortunately not because if the coordinator is spying on you it will know a lot to deanonimize you. Somehow the participants have to keep their outputs in a secret during the coinjoin. How to construct the CoinJoin if we don't know tha outputs? The answer is blind signitures!
+With this your privacy on the blockchain is increased. Are we in safe now? Unfortunately not because if the coordinator is spying on you it will know a lot to deanonimize you. Somehow the participants have to keep their outputs in a secret during the coinjoin. How to construct the CoinJoin if we don't know the outputs? The answer is blind signitures!
 
 Chaumian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants.
 
-
+Mainly there is 
 
 _Odd dollar example_
 # Fungibility!
