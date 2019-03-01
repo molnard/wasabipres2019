@@ -72,6 +72,8 @@ If the anonimity set is fifty than the coordinator will wait for fifty clients t
 In that phase we are checking if the users are still there and send them back the roundhash. As we got all the input addresses on coordinator site generate a hash from that and send it to the client. In that way later the clients can verify if the coordinator has messed something with the inputs. 
 In the next phase the client sends the unblinded outputs. But before that it changes TOR identity meaning that there is now way to interconnect the one which sent the inputs. So now we have all inputs, all outputs only the signatures are missing. 
 In signing phave we let the clients verify the constructed coinjoin. They are verifying the inputs with the roundHash looking if they aren't changed meanwhile, looking if their outputs and amount are there and correct. If something is not correct then client can say that: I am not sign this transaction. So basically there is no way to stole from the users. if it is OK the signature is sent back and added to the transaction. Wasabi using bech32 addresses with segwit.
+After every user signed the transaction it is broadcasted by the server. 
+
 
 
 _Odd dollar example_
