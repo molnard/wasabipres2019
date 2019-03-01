@@ -13,13 +13,20 @@ If you are buying/selling with bitcoin you are exposing your identity which coul
 
 # Wallet
 To pay you are using some kind of wallet for the transaction maybe a webwallet or a lightwallet. The problem is that
+
 __Light wallets__ Everyt actions you take are forwarded to a server. Thin client like wallets are the same they are just providing a user interface but transaction related operations are running on the servers which can easily spy on you. 
 In the privacy point of view this is the worst you can do. Use wallets which are not tied to a dedicated server.
+
 __Key storage__ To sign the transaction for that coffee you have to own a private key. It must be stored on your device, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
+
 __Encrypted secret__ If the key is stored locally then the Wallet file should be stored safely. Wasabi is encrypt the file in a way that if someone manages to get it still useless without your password. What is more safer than that is to use a hardware wallet so your private keys never leave the embedded system. 
+
 __Address reuse__ Address reuse can be dangerous too. It harms the privacy of not only yourself, but also others - including many not related to the transaction. When addresses are re-used, they allow others to much more easily and reliably determine that the address being reused is yours. Wasabi is a deterministic wallet so it is generating new addresses for every transaction.
+
 __Input joining__ In many wallets you are only seeing the total balance of your wallet. In reality your balance is fragmented to many UTXO-s. With this kind of wallets you are not able to choose which coin goes where it is selected automatically. Why it is a problem? You should be aware the history of the coin which will be used for a transaction, where did it come from. With coincontrol you can see every coins you have, you can select which will be used, eventhou you can add labels to coins when you are sending or receiving and Wasabi will automatically append the labels according to the path of that coin.
+
 __Trust developers__ Let's say we have found a wallet is fulfilling the mentioned critereas. How can you verify that? Check on the website? Trust in the creator of the wallet? In the world of bitcoin we have a good saying for that: "don't trust, verify". The mechanism of a software is fully determined by the source code. If you are compiling your own wallet from that you can be sure it will work accordingly. Even if you are not a programmer so you have to trust in someone at least the trust is distributed among the programmers of the world like in any open-source projects.
+
 __Company behind__ It is also good if there is a legal entity behind the software. Wasabi has zkSNACKs. 
 
 These were the main privacy problems with wallets. Next session is the bitcoin network especially nodes.
