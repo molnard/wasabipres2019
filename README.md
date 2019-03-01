@@ -68,7 +68,8 @@ Schnorrian CoinJoin: contructing the CoinJoin transaction requires some kind of 
 
 Mainly there are two actors here on the left side the user with wasabiwallet and the coordinator on the right side. Our main goal is to construct the coinjoin transaction in a way that even the coordinator itself could not deanonymize the users meaning that it cannot figure out which outputs corresponds to an input AND maintain protection against DOS attacks. 
 So the first phase is the registration phase. The user would like to gain privacy on one of her UTXOs this will be the input. Also she have to give the outputs where the private coins will arrive. Now if she is giving outputs in a plain format the coordinator easily interconnect inputs and outputs so the trick is to blind the outputs. With this the trick is that the coordinator cannot see the output address but can sign it and later verify that signiture. So it signs it blindly and send it back. Also the input is added to the coinjoin transaction but it is not signed yet so nobody can spend it! In every phase you will see uniqueId-s and hashes like roundhash, basically the function of that is to prevent a hacker joining into coinjoin progress skipping the input registration phase. 
-
+If the anonimity set is fifty than the coordinator will wait for fifty clients to register. This is the longest phase depends of the user activity can take a few minutes to hours. After we got enough users we move forward to the next step. 
+In that phase we are checking if the users are still there and send them back the roundhash. As we got all the input addresses on coordinator site generate a hash from that and send it to the client. In that way later the clients can verify if the coordinator has messed something with the inputs. 
 
 
 _Odd dollar example_
