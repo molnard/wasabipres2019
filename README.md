@@ -64,9 +64,11 @@ Later wasabi added a feature called: "unequal amount mixing" which basically mea
 
 With this your privacy on the blockchain is increased. Are we in safe now? Unfortunately not because if the coordinator is spying on you it will know a lot to deanonimize you. Somehow the participants have to keep their outputs in a secret during the coinjoin. How to construct the CoinJoin if we don't know the outputs? The answer is blind signitures!
 
-Chaumian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants.
+Schnorrian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants.
 
-Mainly there is 
+Mainly there are two actors here on the left side the user with wasabiwallet and the coordinator on the right side. Our main goal is to construct the coinjoin transaction in a way that even the coordinator itself could not deanonymize the users meaning that it cannot figure out which outputs corresponds to an input. 
+Let's check the following site. 
+
 
 _Odd dollar example_
 # Fungibility!
