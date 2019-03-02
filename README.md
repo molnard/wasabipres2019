@@ -41,7 +41,7 @@ __P2P Transaction propagation__
 In the future transaction propagation could be made more private with the technology called dandelion where path and the propagation as known as diffusion is obfuscated with some random behaviour.
 
 __Get balance requests SPV filtering__
-There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together. For example to determine the total UTXO you have in the wallet addresses are queried in the same time from the same source.
+There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together. For example to determine the total UTXO you have in the wallet, addresses are queried in the same time from the same source.
 
 Jonas Nick has deanonimyzed a lot of SPV wallets and he said that give me one of your bitcoin address (SPV wallet) and I give back 70 percent of your wallett addresses. That is pretty scary. To prevent that you should run a full node which is costly OR    
 there is another option. A new proposal BIP158 which is in the process of getting finalized. It is apparently in discussion. What it does is that you are not downloading the whole blockchain but filters. The filters are contructed in a way that your wallet can determine which blocks are related. This is happening on client side. So instead of requesting transactions you are requesting blocks even more it is requesting every block from random nodes. So basically no on can figure out which transactions you are interested in.
@@ -62,7 +62,7 @@ Can someone do this alone? Well not really. The problem is that even if you are 
 
 In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it.
 
-CoinJoin outputs should be equal regarding the amounts. Every attempts to change this is to risk that the CoinJoin can be deanomyzed. Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. (Sharedcoin works like this) we need fixed denominations.
+CoinJoin outputs should be equal regarding the amounts. Every attempts to change this is to risk that the CoinJoin can be deanomyzed. Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. (Sharedcoin worksed like this) we need fixed denominations.
 
 Basically it works as follows. Wait enought participants to register into the coinjoin. They are just sending confirmed utxos as the inputs. If there is enought participants move forward construct the coinjoin transaction. Inputs and outputs are ready but the signatures are missing so send this partially constructed transaction back to the users let them verify it - for example if they are gettign back enough bitcoins. If it is OK they sign their inputs send it back to the coordinator where the transaction will be propagated to the network. Roughly speaking this is how it works.
 
@@ -78,7 +78,7 @@ Schnorrian CoinJoin: contructing the CoinJoin transaction requires some kind of 
 Mainly there are two actors here on the left side the user with wasabiwallet and the coordinator on the right side. Our main goal is to construct the coinjoin transaction in a way that even the coordinator itself could not deanonymize the users meaning that it cannot figure out which outputs corresponds to an input AND maintain protection against DOS attacks. 
 
 
-So the first phase is the __registration phase__. The user would like to gain privacy on one of her UTXOs this will be the input. Also she have to give the outputs where the private coins will arrive. Now if she is giving outputs in a plain format the coordinator easily interconnect inputs and outputs so the trick is to blind the outputs. With this the trick is that the coordinator cannot see the output address but can sign it and later verify that signiture. So it signs it blindly and send it back. 
+So the first phase is the __registration phase__. The user would like to gain privacy on one of her UTXOs this will be the input. Also she have to give the outputs where the private coins will arrive. Now if she is giving outputs in a plain format the coordinator easily interconnect inputs and outputs so the trick is to blind the outputs. With this the coordinator cannot see the output address but can sign it and later verify that signiture. So it signs it blindly and send it back. 
 
 Also the input is added to the coinjoin transaction but it is not signed yet so nobody can spend it! In every phase you will see uniqueId-s and hashes like roundhash, basically the function of that is to prevent a hacker joining into coinjoin progress skipping the input registration phase. 
 
@@ -95,7 +95,7 @@ In signing phase we let the clients verify the constructed coinjoin. They are ve
 
 After every user signed the transaction it is broadcasted by the server. 
 
-So that's how Wasabi's coinjoin works. More details can be found on the website regarding technicals, the software and regarding the team. 
+So that's how Wasabi's coinjoin works. More details can be found on the website regarding technicals details, software, or about the team. 
 
 
 
