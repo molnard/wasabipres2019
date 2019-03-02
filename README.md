@@ -2,9 +2,11 @@
 
 ![alt text](https://wasabiwallet.io/images/wasabi_wallet_logo_2-1.png)
 
-Hi everyone! My name is David Molnar and I would like invite you for a coffee. A virtual coffee of course because no way I have as much coffee as I would require to invite you all.
+Hi everyone! My name is David Molnar and I am one of the software artist of the Wasabi Wallet team. 
 
 Wasabi is an open-source, non-custodial, privacy focused Bitcoin wallet, that implements trustless coin shuffling with mathematically provable anonymity: Chaumian CoinJoin, it is the first of its kind.
+
+To wake you up let's go buy a cup of coffee. A virtual coffee of course because no way I have as much coffee as I would require to invite you all.
 
 ## Coffee Shop
 
@@ -36,7 +38,7 @@ These were the main privacy problems with wallets. Next session is the bitcoin n
 # Nodes
 
 __Supernodes__
-There are supernodes in the network which are collecting metadata about the origin of any network traffic. If you are lucky you didn't bump into any network analysis server, but you likely will in the future. When you are broadcasting a transaction the originating IP, your IP goes with it. To solve this you can use VPN or any anonimity network. Wasabi is using TOR and random node selection to address this problem. 
+There are supernodes in the network which are collecting metadata about the origin of any network traffic. If you are lucky you didn't bump into any network analysis server, but you likely will in the future. When you are broadcasting a transaction the originating IP, your IP goes with it. To solve this you can use VPN or any anonimity network. Wasabi is using TOR to address this problem. 
 __P2P Transaction propagation__
 In the future transaction propagation could be made more private with the technology called dandelion where path and the propagation as known as diffusion is obfuscated with some random behaviour.
 __Special nodes__
