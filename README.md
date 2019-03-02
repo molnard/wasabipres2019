@@ -4,6 +4,8 @@
 
 Hi everyone! My name is David Molnar and I would like invite you for a coffee. A virtual coffee of course because no way I have as much coffee as I would require to invite you all.
 
+Wasabi is an open-source, non-custodial, privacy focused Bitcoin wallet, that implements trustless coin shuffling with mathematically provable anonymity: Chaumian CoinJoin, it is the first of its kind.
+
 ## Coffee Shop
 
 So there we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile you are drinking your coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy view during the transaction.
@@ -58,7 +60,7 @@ Ok so at this point most of the privacy problems are solved on an acceptable lev
 
 Its an old story that why mixers and different kind of coinjoin technilogies arise. 
 _mixers_
-Can someone do this alone? Well not really. The problem is that even if you are generating a lot of transaction with varying inputs and outputs the begin and the end transaction could be identified. For example if coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. By the way transaction generation could be expensive. Anonymity loves company: you cannot mix by yourself.
+Can someone do this alone? Well not really. The problem is that even if you are generating a lot of transaction with varying inputs and outputs the begin and the end transaction could be identified. For example if coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. In additon transaction generation could be expensive. "anonymity loves company", the more users there are, the better your privacy.
 
 In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it. Decentralized coinjoin is the solution for that.
 
