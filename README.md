@@ -19,7 +19,7 @@ If you are buying/selling with bitcoin you are exposing your identity which coul
 To pay you are using some kind of wallet for the transaction maybe a webwallet or a lightwallet. The problem is that
 
 __Light wallets__ Everyt actions you take are forwarded to a server. Thin client like wallets are the same they are just providing a user interface but transaction related operations are running on the servers which can easily spy on you. 
-In the privacy point of view this is the worst you can do. Use wallets which are not tied to a dedicated server.
+In the privacy point of view this is the worst you can do.
 
 __Key storage__ To sign the transaction for that coffee you have to own a private key. It must be stored on your device, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
 
@@ -31,8 +31,6 @@ __Input joining__ In many wallets you are only seeing the total balance of your 
 
 __Trust developers__ Let's say we have found a wallet is fulfilling the mentioned critereas. How can you verify that? Check on the website? Trust in the creator of the wallet? In the world of bitcoin we have a good saying for that: "don't trust, verify". The mechanism of a software is fully determined by the source code. If you are compiling your own wallet from that you can be sure it will work accordingly. Even if you are not a programmer so you have to trust in someone at least the trust is distributed among the programmers of the world like in any open-source projects.
 
-__Company behind__ It is also good if there is a legal entity behind the software. Wasabi has zkSNACKs. 
-
 These were the main privacy problems with wallets. Next session is the bitcoin network especially nodes.
 
 # Nodes
@@ -41,11 +39,9 @@ __Supernodes__
 There are supernodes in the network which are collecting metadata about the origin of any network traffic. If you are lucky you didn't bump into any network analysis server, but you likely will in the future. When you are broadcasting a transaction the originating IP, your IP goes with it. To solve this you can use VPN or any anonimity network. Wasabi is using TOR to address this problem. 
 __P2P Transaction propagation__
 In the future transaction propagation could be made more private with the technology called dandelion where path and the propagation as known as diffusion is obfuscated with some random behaviour.
-__Special nodes__
-There are also some special nodes, servers which are dedicated for a certain lightwallet, a third-party server which can easily spy on you.
 
 __Get balance requests SPV filtering__
-There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together. For example to determine the total UTXO you have in the wallet addresses are queried in the same time from the same source. Bloom filtering is not helping on this because the filters are on server side so you still exposing your addresses.
+There is no light wallet that would not fail on the privacy level against network analysis. Every light wallet is volnurable to network analysis. With most light wallet is easy to see because it is mostly just querying a web API so every bitcoin address are exposed and just connected together. For example to determine the total UTXO you have in the wallet addresses are queried in the same time from the same source.
 
 Jonas Nick has deanonimyzed a lot of SPV wallets and he said that give me one of your bitcoin address (SPV wallet) and I give back 70 percent of your wallett addresses. That is pretty scary. To prevent that you should run a full node which is costly OR    
 there is another option. A new proposal BIP158 which is in the process of getting finalized. It is apparently in discussion. What it does is that you are not downloading the whole blockchain but filters. The filters are contructed in a way that your wallet can determine which blocks are related. This is happening on client side. So instead of requesting transactions you are requesting blocks even more it is requesting every block from random nodes. So basically no on can figure out which transactions you are interested in.
@@ -64,7 +60,7 @@ Its an old story that why mixers and different kind of coinjoin technilogies ari
 _mixers_
 Can someone do this alone? Well not really. The problem is that even if you are generating a lot of transaction with varying inputs and outputs the begin and the end transaction could be identified. For example if coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. In additon transaction generation could be expensive. "anonymity loves company", the more users there are, the better your privacy.
 
-In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it. Decentralized coinjoin is the solution for that.
+In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it.
 
 CoinJoin outputs should be equal regarding the amounts. Every attempts to change this is to risk that the CoinJoin can be deanomyzed. Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. (Sharedcoin works like this) we need fixed denominations.
 
@@ -72,6 +68,7 @@ Basically it works as follows. Wait enought participants to register into the co
 
 Why coinjoin is good for privacy?
 Because from the equal outputs of the CoinJoin you cannot tell which input correspons to that for sure. If there is 4 paticipants in the coinjoin then you have a quater probability to tell that. In this case we are saying that the anonimity set is four. In the reality nobody will register with the exact amount of the denomination so beside the coinjoined coin you will get back a change which is unmixed. With that amount you can participate in another round meaning that with this particular example if you have 8 bitcoins than you will have 8 rounds to anonymize you total amount. You can also do that with CoinJoined coins to increase the privacy of a coin. 
+
 Later wasabi added a feature called: "unequal amount mixing" which basically meaning that the coordinator is trying to mix the remaining amounts if there is enough to do that. In that case the anonimity set will be lower but it will be faster and we are getting more anonymity for a slightly more fee, in generally it is cheaper.
 
 With this your privacy on the blockchain is increased. Are we in safe now? Unfortunately not because if the coordinator is spying on you it will know a lot to deanonimize you. Somehow the participants have to keep their outputs in a secret during the coinjoin. How to construct the CoinJoin if we don't know the outputs? The answer is blind signitures!
@@ -79,12 +76,27 @@ With this your privacy on the blockchain is increased. Are we in safe now? Unfor
 Schnorrian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants.
 
 Mainly there are two actors here on the left side the user with wasabiwallet and the coordinator on the right side. Our main goal is to construct the coinjoin transaction in a way that even the coordinator itself could not deanonymize the users meaning that it cannot figure out which outputs corresponds to an input AND maintain protection against DOS attacks. 
-So the first phase is the registration phase. The user would like to gain privacy on one of her UTXOs this will be the input. Also she have to give the outputs where the private coins will arrive. Now if she is giving outputs in a plain format the coordinator easily interconnect inputs and outputs so the trick is to blind the outputs. With this the trick is that the coordinator cannot see the output address but can sign it and later verify that signiture. So it signs it blindly and send it back. Also the input is added to the coinjoin transaction but it is not signed yet so nobody can spend it! In every phase you will see uniqueId-s and hashes like roundhash, basically the function of that is to prevent a hacker joining into coinjoin progress skipping the input registration phase. 
+
+
+So the first phase is the __registration phase__. The user would like to gain privacy on one of her UTXOs this will be the input. Also she have to give the outputs where the private coins will arrive. Now if she is giving outputs in a plain format the coordinator easily interconnect inputs and outputs so the trick is to blind the outputs. With this the trick is that the coordinator cannot see the output address but can sign it and later verify that signiture. So it signs it blindly and send it back. 
+
+Also the input is added to the coinjoin transaction but it is not signed yet so nobody can spend it! In every phase you will see uniqueId-s and hashes like roundhash, basically the function of that is to prevent a hacker joining into coinjoin progress skipping the input registration phase. 
+
 If the anonimity set is fifty than the coordinator will wait for fifty clients to register. This is the longest phase depends of the user activity. Can take a few minutes to hours. After we got enough users we move forward to the next step. 
+
+
 In that phase we are checking if the users are still there and send them back the roundhash. As we got all the input addresses on coordinator site generate a hash from that and send it to the client. In that way later the clients can verify if the coordinator has manipulated the inputs. 
+
+
 In the next phase the client sends the unblinded outputs. But before that it changes TOR identity meaning that there is no way to interconnect the one which sent the inputs. So now we have all inputs, all outputs only the signatures are missing. 
-In signing phase we let the clients verify the constructed coinjoin. They are verifying the inputs with the roundHash looking if they aren't changed meanwhile, looking if their outputs and amount are there and correct. If something is not correct then client can say that: I am not sign this transaction. So basically there is no way to stole from the users. if it is OK the signature is sent back and added to the transaction. Wasabi using bech32 addresses with segwit.
+
+
+In signing phase we let the clients verify the constructed coinjoin. They are verifying the inputs with the roundHash looking if they aren't changed meanwhile, looking if their outputs and amount are there and correct. If something is not correct then client can say that: I am not sign this transaction. So basically there is no way to stole from the users. if it is OK the signature is sent back and added to the transaction. 
+
 After every user signed the transaction it is broadcasted by the server. 
+
+So that's how Wasabi's coinjoin works. More details can be found on the website regarding technicals, the software and regarding the team. 
+
 
 
 
