@@ -10,7 +10,7 @@ To wake you up let's go buy a cup of coffee. A virtual coffee of course because 
 
 ## Coffee Shop
 
-So there we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile you are drinking your coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy view during the transaction.
+So there we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile we are drinking our coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy / security view during the transaction.
 
 # Customer service
 If you are buying/selling with bitcoin you are exposing your identity which could be connected to your wallet. If you are doing it "offline" you are exposing your identity to the cashier.
@@ -54,7 +54,7 @@ Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect
 
 ## CoinJoin
 
-Ok so at this point most of the privacy problems are solved on an acceptable level by using existing technologies like TOR and avoiding leaking queries. We handled Wallet leakage, networks and part of blockchain analysis but one more thing is remained, transaction chain is still there and is it traceable. So we have to obfuscate the transaction graph. 
+At this point part of the privacy and security problems are coverd. However one of the most trivial problem is remained, that transaction chain is still there and is it traceable. So we have to obfuscate the transaction graph. 
 
 Its an old story that why mixers and different kind of coinjoin technilogies arise. 
 _mixers_
