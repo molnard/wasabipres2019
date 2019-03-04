@@ -2,23 +2,23 @@
 
 ![alt text](https://wasabiwallet.io/images/wasabi_wallet_logo_2-1.png)
 
-Hi everyone! My name is David Molnar and I am one of the software artist of the Wasabi Wallet team. 
+Hi everyone! My name is David Molnar and I am one of the software developers we could say software artist of the Wasabi Wallet team. 
 
 Wasabi is an open-source, non-custodial, privacy focused Bitcoin wallet, that implements trustless coin shuffling with mathematically provable anonymity: Chaumian CoinJoin, it is the first of its kind.
 
-To wake you up let's go buy a cup of coffee. A virtual coffee of course because no way I have as much coffee as I would require to invite you all.
+But before we go into the details. To wake you up let's go buy a cup of coffee.
 
 ## Coffee Shop
 
 So there we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile we are drinking our coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy / security view during the transaction.
 
 # Customer service
-If you are buying/selling with bitcoin you are exposing your identity which could be connected to your wallet. If you are doing it "offline" you are exposing your identity to the cashier.
+Which is pretty obvious you have exposed your personal identiy to the cashier. If you are doing it online than you might do the same bacause of the Know you customer as know as KYC policy. So the transaction can be connected to you. If you are using your wallet in the same way you are using your credit card you might have exposed you total balance or some part of it to the cashier. That is not only an uncofortable feeling but also dangerous. With your input address she could follow back past transactions and with change output address she could trace your future transactions. 
 
 # Wallet
 To pay you are using some kind of wallet for the transaction maybe a webwallet or a lightwallet. The problem is that
 
-__Light wallets__ Everyt actions you take are forwarded to a server. Thin client like wallets are the same they are just providing a user interface but transaction related operations are running on the servers which can easily spy on you. 
+__Light wallets__ Everyt actions you take are forwarded to a server. Either your wallet just providing a user interface or using an API the transaction related operations are running on the servers which can easily spy on you. They could know everything if they decide to do that. 
 In the privacy point of view this is the worst you can do.
 
 __Key storage__ To sign the transaction for that coffee you have to own a private key. It must be stored on your device, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
