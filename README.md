@@ -6,19 +6,19 @@ Hi everyone! My name is David Molnar and I am one of the software developers we 
 
 Wasabi is an open-source, non-custodial, privacy focused Bitcoin wallet, that implements trustless coin shuffling with mathematically provable anonymity: Chaumian CoinJoin, it is the first of its kind.
 
-But before we go into the details. To wake you up let's go buy a cup of coffee.
+But before we go into the details. To wake you and me up let's go buy a cup of coffee.
 
 ## Coffee Shop
 
 So there we are in the coffee shop and we are paying with bitcoin as a result we get back our drink. Meanwhile we are drinking our coffee which is tasty and hot as it meant to be, let's have a conversation about what happened in the point of privacy / security view during the transaction.
 
 # Customer service
-Which is pretty obvious you have exposed your personal identiy to the cashier. If you are doing it online than you might do the same bacause of the Know you customer as know as KYC policy. So the transaction can be connected to you. If you are using your wallet in the same way you are using your credit card you might have exposed you total balance or some part of it to the cashier. That is not only an uncofortable feeling but also dangerous. With your input address she could follow back past transactions and with change output address she could trace your future transactions. 
+What is pretty obvious you have exposed your personal identiy to the cashier. The situation is pretty the same If you are doing it online bacause of the Know you customer policy as know as KYC policy where you have to identify yourself for example with a photo if your ID card. So the transaction can be connected to you. If you are using your wallet in the same way you are using your credit card you might have exposed you total balance or some part of it to the cashier. That is not only an uncofortable feeling but also dangerous. With your input address she could follow back past transactions and with change output address she could trace your future transactions. 
 
 # Wallet
-To pay you are using some kind of wallet for the transaction maybe a webwallet or a lightwallet. The problem is that
+To pay with bitcoin you have to use a wallet maybe a webwallet or a lightwallet. Most of these wallets directly tied to a 3rd party server.
 
-__Light wallets__ Everyt actions you take are forwarded to a server. Either your wallet just providing a user interface or using an API the transaction related operations are running on the servers which can easily spy on you. They could know everything if they decide to do that. 
+__Light wallets__ Everyt actions you take are forwarded to them if they decide they can easily spy on you. Most of the cases they are holding your private keys too.
 In the privacy point of view this is the worst you can do.
 
 __Key storage__ To sign the transaction for that coffee you have to own a private key. It must be stored on your device, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
