@@ -21,16 +21,20 @@ To pay with bitcoin you have to use a wallet maybe a webwallet or a lightwallet.
 __Light wallets__ Everyt actions you take are forwarded to them if they decide they can easily spy on you. Most of the cases they are holding your private keys too.
 In the privacy point of view this is the worst you can do.
 
-__Key storage__ Private key is used to sign a transaction and should be stored on your device, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. Last time and that was the last time that I used my coinbase wallet because suddenly I was required to upload an image of my passport until that my wallet was freezed. I cannot do anything. If I would have my private key I could recover my wallet in any other wallet software and use my coins.
-If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
+__Key storage__ Private key is used to sign a transaction and should be stored on your device, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. Last time and that was the last time that I used my coinbase wallet because suddenly I was required to upload an image of my passport until that my wallet was freezed. 
 
-__Encrypted secret__ If you have your keys it should be stored in a secure way for example in a nicely encrypted wallet file like wasabi is doing that.  What is more safer than that is to use a hardware wallet so your private key never leaves the embedded system. 
+They can lock you out until you deannonimize yourself. 
+
+I cannot do anything. If I would have my private key I could recover my wallet in any other wallet software and use my coins.
+If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
 
 __Input joining__ In many wallets you are only seeing the total balance of your wallet. In reality your balance is fragmented to many coins. With this kind of wallets you are not able to choose which coin goes where it is selected automatically. Why it is a problem? You should be aware the history of the coin which will be used for a transaction, where did it come from. With coincontrol you can see every coins you have, you can select which will be used, eventhou you can add labels to coins when you are sending or receiving and Wasabi will automatically append the labels according to the path of that coin. Basically it is building the history of a particular coin. For example in that way you can avoid to pay with your full salary for that coffee and expose it to the cashier. 
 
-__Trust developers__ Let's say we have found a wallet which is fulfilling the mentioned critereas. How can you verify that? Check on the website? Trust in the creator of the wallet? In the world of bitcoin we have a good saying for that: "don't trust, verify". The functions of a software is fully determined by the source code. It is like the plans of a house. If you have the plans you know what will be where. Compiling your own wallet from the source so you can be sure it will work accordingly. Even if you are not a programmer so you have to trust in someone at least the trust is distributed among the programmers of the world like in any open-source projects. And we like to distrubite trust that's why we are using the blockchain.
+__Trust developers__ Let's say we have found a wallet which is fulfilling the mentioned critereas. How can you verify that? 
 
-Your wallet have to communicate to send and receive requests from and to bitcoin nodes. 
+Wasabi is 100% open-source sotfware so you don't have to trust in the developers you can verify it by compiling from the source code. 
+
+Your wallet have to communicate to send and receive requests with bitcoin nodes. 
 
 # Nodes
 
@@ -39,9 +43,9 @@ There are supernodes in the network which collect metadata about the origin of a
 
 There is no light wallet that would not fail on the privacy level against network analysis. With most light wallet, easy to see because mostly it is just querying a web API. For example to determine the total balance you have in your wallet, addresses are queried in the same time from the same source and just connected together.
 
-Jonas Nick has deanonimyzed a lot of SPV wallets and he said that give me one of your bitcoin address (SPV wallet) and I give back 70 percent of your wallett addresses. That is pretty scary. 
+Jonas Nick has deanonimyzed a lot of SPV wallets and he said that give me one of your bitcoin address (SPV wallet) and I give back 70 percent of your wallett addresses using heuristic and cluster analysis. That is pretty scary. 
 
-These kind of problems can be solved by runnig a full node I would recommend that. But unfortunately it is expensive. 
+These kind of problems can be solved by runnig a full node I would recommend that. But if you cannot do that because it is resource intensive. 
 
 Another solution is in the process of getting finalized BIP158. It is apparently in discussion. 
 The idea is instead of requesting addresses you are requesting blocks. In that way an observer cannot tell which addresses are we interested in.
@@ -51,7 +55,7 @@ Another interesting technology will be dandelion where the where propagation as 
 
 # BlockChain and transaction graph
 
-Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect. Bitcoin is actually pseudonymous(no p in the beginning). The distinction is crucial: under a cryptographic pseudonym, your behavior can still be tracked. KYC exchanges collect personal information which is shared with other exchanges, Heuristics and clustering analysis to identify exchanges, mixers, supernodes connect to large swithes and correlate transaction with their originating IPs. 
+Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect. Bitcoin is actually pseudonymous(no p in the beginning). The distinction is crucial: under a cryptographic pseudonym, your behavior can still be tracked. 
 
 ## CoinJoin
 
@@ -60,7 +64,7 @@ At this point we have covered many issues. However one of the most trivial probl
 _mixers_
 Can you obfuscate the ledger on your own? Well the answer is not really. The problem is that even if you are generating a lot of transactions with varying inputs and outputs the begin and the end transaction could be identified. For example if coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. In additon transaction generation could be expensive. The more users there are, the better your privacy.
 
-In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you send a larger amount then it will take it. Wasabi has a trustless solution for this but before that
+In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you send a larger amount then it will take it. Also it can decide to deanonimize you. Trusted 3rd parties are privacy and security holes. Wasabi has a trustless solution for this but before that
 
 Why coinjoin is good for privacy? Because from the CoinJoin you cannot tell which output correspons to an input.
 Let's look at following CoinJoin transaction. 
