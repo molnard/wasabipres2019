@@ -60,40 +60,32 @@ At this point part of the privacy and security problems are coverd. However one 
 _mixers_
 Can you obfuscate the ledger on you own? Well the answer is not really. The problem is that even if you are generating a lot of transactions with varying inputs and outputs the begin and the end transaction could be identified. For example if coins come from the same wallet it can be connected together with the help of breadth-first search on the transaction graph. In additon transaction generation could be expensive. "anonymity loves company", the more users there are, the better your privacy.
 
-In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you are sending a larger amount then it will take it.
+In the past, traditional bitcoin mixers provide centralized way to obfuscate the ledger. The problem is that you have to send your coins into the mixer and they will send back the mixed bitcoin for you if they will... For example: Bitcoin fog worked for years without an issue had a good feedback but later it became a selective scam. You send the money it mixes but if you send a larger amount then it will take it. Wasabi has a trustless solution for this but before that
 
-CoinJoin outputs should be equal regarding the amounts. Every attempts to change this is to risk that the CoinJoin can be deanomyzed. Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. (Sharedcoin worksed like this) we need fixed denominations.
+Why coinjoin is good for privacy? Because from the outputs of the CoinJoin you cannot tell which input correspons to and input.
+Let's look at following CoinJoin transaction. 
+For the first look it is hard to say which output connected to which input. Who knows the game named sodoku? Imagine that a CoinJoin transaction is written in a format of a Sodoku game, the rows are the inputs, the columns are the outputs. Analyzing the amounts and filling the sodoku can reveal the relationship between inputs and outputs thus deanonymize the participants. Let's try to deanonimyze the users. Output with 1 BTC can only can only be owned by Alice. Output with 8 BTC can only can only be owned by Eszter. Bob's outputs can only be 2 and 4 not other combination is give 6 bitcoins. And so on... The more users are denonimized the easier to do the rest. If we need mathematically proven anonimity we need to have equal outputs regarding the amounts.
 
-Basically it works as follows. Wait enought participants to register into the coinjoin. They are just sending confirmed utxos as the inputs. If there is enought participants move forward construct the coinjoin transaction. Inputs and outputs are ready but the signatures are missing so send this partially constructed transaction back to the users let them verify it - for example if they are gettign back enough bitcoins. If it is OK they sign their inputs send it back to the coordinator where the transaction will be propagated to the network. Roughly speaking this is how it works.
+If there is 4 paticipants in the coinjoin then you have a quater probability to tell who is the original owner of that coin. In this case we are saying that the anonimity set is four. In the reality nobody will register with the exact amount of the denomination so beside the mixed coin you will get back a change which is unmixed. With that amount you can participate in another round meaning that with this particular example if you have 8 bitcoins than you will have 8 rounds to anonymize you total amount.
 
-Why coinjoin is good for privacy?
-Because from the equal outputs of the CoinJoin you cannot tell which input correspons to that for sure. If there is 4 paticipants in the coinjoin then you have a quater probability to tell that. In this case we are saying that the anonimity set is four. In the reality nobody will register with the exact amount of the denomination so beside the coinjoined coin you will get back a change which is unmixed. With that amount you can participate in another round meaning that with this particular example if you have 8 bitcoins than you will have 8 rounds to anonymize you total amount.
+How to generate this coinjoin transaction? Something like a coordinator is required which establish the connection between the paticipants.
 
-Later wasabi added a feature called: "unequal amount mixing" which basically means that the coordinator is trying to mix the remaining amounts if there is enough to do that. In that case the anonimity set will be lower but it will be faster and we are getting more anonymity for a slightly more fee, in generally it is cheaper.
+With this your privacy on the blockchain is increased. Are we in safe now? Unfortunately not because if the coordinator is spying on you it will know a lot to deanonimize you. This coordinator have to contructed in way that it cannot deanonymize the participants.
+Let's see how it is done by Wasabi.
 
-With this your privacy on the blockchain is increased. Are we in safe now? Unfortunately not because if the coordinator is spying on you it will know a lot to deanonimize you. Somehow the participants have to keep their outputs in a secret during the coinjoin. How to construct the CoinJoin if we don't know the outputs? The answer is blind signitures!
+So the first phase is when the coordinator waits and collects the users. For example the anonymity set is fifty so it will wait until 50 users are there. Let's have a closer look how can a user can register.
 
-Schnorrian CoinJoin: contructing the CoinJoin transaction requires some kind of coordinator which establish the connection between the paticipants. This coordinator have to contructed in way that it cannot deanonymize the participants.
+The user would like to gain privacy on one of her coins this will be the input. Also she have to give the output where the mixed coin will arrive and also a change output. Now if she gives output in a plain format the coordinator easily interconnect the input the output so deanonimize the user. The trick is to blind the output. With this the coordinator cannot see the output address but can sign it and later verify that signiture if the output was registered or just an attacker tries to provide some fake outputs. So it signs it blindly and send it back. 
 
-Mainly there are two actors here on the left side the user with wasabiwallet and the coordinator on the right side. Our main goal is to construct the coinjoin transaction in a way that even the coordinator itself could not deanonymize the users meaning that it cannot figure out which outputs corresponds to an input AND maintain protection against DOS attacks. 
+In that phase we are checking if the users are still there and do some verification. If all of the clients are there we move to the next phase. 
 
+The client sends the unblinded output. Here we have to stop for a while. The communication between the client and the coordinator made through the internet. I have already mentioned that wasabi is using TOR anonimity network to increase privacy. On client side we are not only defend ourself from an external observer but from the Coordinator itself. If we would use the same Tor channel as we used to send the input the coordinator can interconnect that. So to send the output we are using a different Tor channel and authorize ourself wtih the unblinded output signatures.
 
-So the first phase is the __registration phase__. The user would like to gain privacy on one of her coins this will be the input. Also she have to give the outputs where the private coins will arrive. Now if she is giving outputs in a plain format the coordinator easily interconnect inputs and outputs so the trick is to blind the outputs. With this the coordinator cannot see the output address but can sign it and later verify that signiture. So it signs it blindly and send it back. 
+So now we have all inputs, all outputs only the signatures are missing. 
 
-Also the input is added to the coinjoin transaction but it is not signed yet so nobody can spend it! In every phase you will see uniqueId-s and hashes like roundhash, basically the function of that is to prevent a hacker joining into coinjoin progress skipping the input registration phase. 
+In signing phase we let the clients verify the constructed coinjoin. They are verifying if the transaction is valid for example it the outputs are there and the amounts are correct. So you only have to trust in yourself. If something is not correct then client can say that: I am not sign this transaction. So basically there is no way to stole from the users. if it is OK the signature is sent back and added to the transaction. 
 
-If the anonimity set is fifty than the coordinator will wait for fifty clients to register. This is the longest phase depends of the user activity. Can take a few minutes to hours. After we got enough users we move forward to the next step. 
-
-
-In that phase we are checking if the users are still there and send them back the roundhash. As we got all the input addresses on coordinator site generate a hash from that and send it to the client. In that way later the clients can verify if the coordinator has manipulated the inputs. 
-
-
-In the next phase the client sends the unblinded outputs. But before that it changes TOR identity meaning that there is no way to interconnect the one which sent the inputs. So now we have all inputs, all outputs only the signatures are missing. 
-
-
-In signing phase we let the clients verify the constructed coinjoin. They are verifying the inputs with the roundHash looking if they aren't changed meanwhile, looking if their outputs and amount are there and correct. If something is not correct then client can say that: I am not sign this transaction. So basically there is no way to stole from the users. if it is OK the signature is sent back and added to the transaction. 
-
-After every user signed the transaction it is broadcasted by the server. 
+After every user signed the transaction it is broadcasted to the nodes by the server. 
 
 So that's how Wasabi's coinjoin works. More details can be found on the website regarding technicals details, software, or about the team. 
 
