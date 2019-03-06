@@ -91,9 +91,11 @@ In signing phase we let the clients verify the constructed coinjoin. They are ve
 
 After every user signed the transaction it is broadcasted to the nodes by the server. 
 
-So that's how Wasabi's coinjoin works. More details can be found on the website regarding technicals details, software, or about the team. 
+So that's how Wasabi's coinjoin works. 
 
+Wasabi is not only protect your privacy against others but against us. The only person you have to trust is: YOU!
 
+More details can be found on the website regarding technicals details, software, or about the team. 
 
 
 _Odd dollar example_
