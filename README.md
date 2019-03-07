@@ -18,16 +18,12 @@ What is pretty obvious you have exposed your personal identiy to the cashier. Th
 # Wallet
 To pay with bitcoin you have to use a wallet maybe a webwallet or a lightwallet. Most of these wallets directly tied to a 3rd party server.
 
-__Light wallets__ Everyt actions you take are forwarded to them if they decide they can easily spy on you. Most of the cases they are holding your private keys too.
+__Light wallets__ Everyt actions you take are forwarded to them if they decide they can easily spy on you. Most of the cases they are holding your private keys too, it is called custodial key management.
 In the privacy point of view this is the worst you can do.
 
-__Key storage__ Private key is used to sign a transaction and should be stored on your device, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. Last time and that was the last time that I used my coinbase wallet because suddenly I was required to upload an image of my passport until that my wallet was freezed. 
-
-They can lock you out until you deannonimize yourself. 
-
-I cannot do anything. If I would have my private key I could recover my wallet in any other wallet software and use my coins.
+__Key storage__ Private key should be stored on your side, meaning that you have the full control over your bitcoins no third party can freeze or lose your funds. Last time and that was the last time that I used my coinbase wallet because suddenly I was required to upload an image of my passport until that my wallet was freezed. They can lock you out until you deannonimize yourself. 
 If you control the keys it is your bitcoin if you don't control the keys it is not your bitcoin.
-
+ 
 __Input joining__ In many wallets you are only seeing the total balance of your wallet. In reality your balance is fragmented to many coins. With this kind of wallets you are not able to choose which coin goes where it is selected automatically. Why it is a problem? You should be aware the history of the coin which will be used for a transaction, where did it come from. With coincontrol you can see every coins you have, you can select which will be used, eventhou you can add labels to coins when you are sending or receiving and Wasabi will automatically append the labels according to the path of that coin. Basically it is building the history of a particular coin. For example in that way you can avoid to pay with your full salary for that coffee and expose it to the cashier. 
 
 __Trust developers__ Let's say we have found a wallet which is fulfilling the mentioned critereas. How can you verify that? 
@@ -91,9 +87,7 @@ In signing phase we let the clients verify the constructed coinjoin. They are ve
 
 After every user signed the transaction it is broadcasted to the nodes by the server. 
 
-So that's how Wasabi's coinjoin works. 
-
-Wasabi is not only protect your privacy against others but against us. The only person you have to trust is: YOU!
+Wasabi not only protects your privacy from others but also protects from us. The only person you have to trust in, is yourself!
 
 More details can be found on the website regarding technicals details, software, or about the team. 
 
