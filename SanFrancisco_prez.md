@@ -79,7 +79,8 @@ Wasabi using Client side filtering means that your client has a filter set local
 5 Use CoinJoin.
 
 We got privacy on the network level but we still don't have privacy on blockchain level. The transaction chain is our enemy.
-One solution is CoinJoin which is a huge transaction where inputs and outputs are shuffled between the participants where each participants partially sign their own input and this is constructed in a way that they don't have to trust in each other. 
+Here is Alice she has a potentially tainted coin. For example it is shes salary and she has a feeling that her boss is watching the emloyees addresses. 
+Alice wants to break the chain of transactions and get rid of every heuristic. Now doing something 'celever' can be enough but who knows when there will be a heuristic that will find connection. SharedCoin failed like this, they did a lot of CoinJoin and later something called CoinJoin Sudoku partially or totally deanonimized all. So we need something which is provable. The base idea is: if the outputs are equal than amount analysis won't work. So we set up a minumum denomination 1 BTC. Every participants generate output addresses. 
 
 6 Avoid servers.
 
