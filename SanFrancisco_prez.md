@@ -15,20 +15,18 @@ You can be an individual or you can be a business both need privacy for their pa
 
 I lyed. It is very important to them to not have privacy.
 
-Simple scenario would be for example you have a million dollar in some cold storage wallet and you choose to pay for a cofee. So from the input the barista knows you got a lot of money. Follow you until your house, ties you to the chair and it doesn't matter what you used to store your private key, you will be robbed - it is also called 5 dollar wrench attack. 
-
 Last time when I was abroad I had to pay with a 500 euro banknote. I was literally trying to hide during the payment because that amount of money can trigger someone. With bitcoin the amount and the number of prying eyes are much higher. 
 Privacy is thing that you can voluntairly share information but only if you want to! Privacy is the act of choosing what to reveal to the world.
 
 But there is another greate benefit, a greater glory behind,
 
+Well if it would be an excange rate calculator it wouldn't be so useful. But that has deeper meaning. 
 if you impove privacy than you will impove bitcoin as a money itself. Money has some axiomatic properties describes what is a good money: Acceptability, Portability, Durability, Divisibility, Fungiblitiy and so on.
-Fungibility is the interchangablity of money. 1 EUR = 1 EUR. It does't matter where it came from. It does't matter if two ppl before you it was stolen. It is a euro. That euro is the same as every other euro. No one can say: I take that euro but I won't take that other one. Money is the one type of property that it cannot be stolen and recovered by the original owner. If you got robbed you can't say that is my money and give back two people later. You can say to the person who stole it from you but you can't just walk into a shop and say I am gonna sue you because you have the money that was stolen from me. The reason that we have fungiblity is very simple: otherwise it won't work. Imagine that every time you receive a euro you have to check a centralized list if it is dirty, that's not working - it won't scale. In bitcoin we can see some companies trying to destroy fungiblity and that is a real problem. 
+Fungibility is the interchangablity of money. 1 EUR = 1 EUR. It does't matter where it came from. It does't matter if two ppl before you it was stolen. It is a euro. That euro is the same as every other euro. No one can say: I take that euro but I won't take that other one. Money is the one type of property that it cannot be stolen and recovered by the original owner. If you got robbed you can't say that is my money and give back two people later. You can say to the person who stole it from you but you can't just walk into a shop and say I am gonna sue you because you have the money that was stolen from me. The reason that we have fungiblity is very simple: otherwise money won"t work. Imagine that every time you receive a euro you have to check a centralized list if it is dirty, that's not working - it won't scale. In bitcoin we can see some companies trying to destroy fungiblity and that is a real problem. 
 
 1 - Trying to sell clean coins for more. for example Coinbase coins.
 2 - Many coins may be called ”dirty” in some way or another. These coins worth less than others or banned.
-3 - Discriminate you by your transactions. Let's say you made a donation to the republican party in the past and one of your business partner don't like it. 
-4 - Tracked by a survillance company. Information can be sold to anyone who will pay for it - not only for governments but to your neighbours as well.
+
 
 We are building money with bitcoin so we need fungibility too, otherwise bitcoin will fail as a money and it will be useless.
 
