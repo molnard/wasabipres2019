@@ -67,20 +67,20 @@ The 3rd problem is when there is no third party involved which is much better ba
 
 Here is what Wasabi do. First try to connect to a local node on your computer automatically. If it is not possible then select a random peer, connect it through Tor and broadcast the transaction. If it is still not possible for some reason then try to connect to Wasabi backend sent the transaction and let the backend broadcast it.
 
-4 Use your own full node or at least use Tor.
+# 4 Use your own full node or at least use Tor.
 
 If you are using your own full node, most of the privacy leak by network analysis are solved and Wasabi will automatically detect it and use it without a single click. You will have every information locally which is the best from privacy perspective but is has a cost it is very resource intense. 
 So if you cannot do that you will have to ask nodes. We know that there are supernodes logging all information about requests. So for example to establish you total balance you have to ask the node for specific transactions related to your wallet. If it is spying on you it can start building your wallet cluster. That is why most of the light wallets are volnurable against network analysis.
 
 Wasabi using Client side filtering means that your client has a filter set locally. With there filters your client will know which block will contains a specific transaction so instead of asking transactions from the nodes you are asking blocks. Even if the node is spying it will only know which block contains the related transaction. It is not so useful because there are a few thousand transaction in a block.
 
-5 Use CoinJoin.
+# 5 Use CoinJoin.
 
 We got privacy on the network level but we still don't have privacy on blockchain level. The transaction chain is our enemy.
 Here is Alice she has a potentially tainted coin. For example it is shes salary and she has a feeling that her boss is watching the emloyees addresses. 
 Alice wants to break the chain of transactions and get rid of every heuristic. Now doing something 'celever' can be enough but who knows when there will be a heuristic that will find connection. SharedCoin failed like this, they did a lot of CoinJoin and later something called CoinJoin Sudoku partially or totally deanonimized all. So we need something which is provable. The base idea is: if the outputs are equal than amount analysis won't work. So we set up a minumum denomination 1 BTC. Every participants generate output addresses. 
 
-6 Avoid servers.
+# 6 Avoid servers.
 
 This is not a trivial problem to solve this in a trustless way. There were attemts to create centralized mixers but a lot became a scam. There is 3 main problems: they can steal your money, the can collect information and create wallet clusters, the last one they know the links in the CoinJoin so they can deanomize you later.
 Wasabi also has a centralized backend but it is contructed in a way that even we cannot deanonimize you. 
@@ -89,7 +89,7 @@ Wasabi using the Zerolink protocol by Ádám Ficsór. Basically it is a protocol
 
 Here is a simple block diagram how it is work technically.
 
-7 Start using lighning network. 
+# 7 Start using lighning network. 
 
 At this point, it is too early to start leveraging LN in a privacy oriented wallet.
 However, if Bitcoin is successful in the future, there will be a need to think about these questions, since blockchains don't scale.
