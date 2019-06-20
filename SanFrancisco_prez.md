@@ -4,7 +4,7 @@ Wasabi is an open-source, non-custodial, privacy focused Bitcoin wallet, that im
 
 Wasabi's prime directive is: privacy. Every aspects of the wallet is built around this. 
 
-Why do we care about privacy?
+# Why do we care about privacy?
 
 - For the first glance the answer is that you don't want another ppl knowing your business. 
 How much money do you have? 
@@ -16,12 +16,12 @@ You can be an individual or you can be a business both need privacy for their pa
 I lyed. It is very important to them to not have privacy.
 
 Last time when I was abroad I had to pay with a 500 euro banknote. I was literally trying to hide during the payment because that amount of money can trigger someone. With bitcoin the amount and the number of prying eyes are much higher. 
-Privacy is thing that you can voluntairly share information but only if you want to! Privacy is the act of choosing what to reveal to the world.
+Privacy means that you can voluntairly share information but only if you want to! Privacy is the act of choosing what to reveal to the world.
 
-But there is another greate benefit, a greater glory behind,
+# But there is another greate benefit, a great glory behind,
 
-Well if it would be an excange rate calculator it wouldn't be so useful. But that has deeper meaning. 
-if you impove privacy than you will impove bitcoin as a money itself. Money has some axiomatic properties describes what is a good money: Acceptability, Portability, Durability, Divisibility, Fungiblitiy and so on.
+Well if it would be an excange rate calculator it wouldn't be so useful. But now that has deeper meaning. 
+What if It told you: if you impove privacy than you will impove bitcoin as a money itself. Money has some axiomatic properties describes what is a good money: Acceptability, Portability, Durability, Divisibility, Fungiblitiy and so on.
 Fungibility is the interchangablity of money. 1 EUR = 1 EUR. It does't matter where it came from. It does't matter if two ppl before you it was stolen. It is a euro. That euro is the same as every other euro. No one can say: I take that euro but I won't take that other one. Money is the one type of property that it cannot be stolen and recovered by the original owner. If you got robbed you can't say that is my money and give back two people later. You can say to the person who stole it from you but you can't just walk into a shop and say I am gonna sue you because you have the money that was stolen from me. The reason that we have fungiblity is very simple: otherwise money won"t work. Imagine that every time you receive a euro you have to check a centralized list if it is dirty, that's not working - it won't scale. In bitcoin we can see some companies trying to destroy fungiblity and that is a real problem. 
 
 1 - Trying to sell clean coins for more. for example Coinbase coins.
@@ -32,33 +32,33 @@ We are building money with bitcoin so we need fungibility too, otherwise bitcoin
 
 If we can provide easy (I mean cheap and fast) methods to impove fungibility we improve bitcoin as a money and we impove the privacy of ours!
 
-How to be more fungible and more private in practice?
+# How to be more fungible and more private in practice?
 
 Adam Gibson who is working on cryptography, bitcoin privacy, fungibility technology from the beginning, and most known as a developer of JoinMarket with Chris Belcher.
 Set up a list with 7 points. 7 most important rules to follow:
 
 So here is the list, I will give you couple of seconds to read through it.
 
-1 Address reuse
+# 1 Address reuse
 
 Major privacy leak, known since whitepaper. Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect. Bitcoin is actually pseudonymous. The distinction is crucial: under a cryptographic pseudonym, your behavior can still be tracked. 
 It is like a masquarade party. If you are using the same mask on every party sooner or later you will be compromised and with the global ledger all the things you did in the past immediately connected to you.
 Bitcoin addresses are pseudonyms you should throw it away after you used it.
 It a very common mistake as far as I know 30% of all transactions involve an address which is used before.
-Wasabi automatically remove used addresses. There is also a labeling system, you can also add some labels to identify the transaction.
+Wasabi automatically removes used addresses.
 
-2 Separate profile
+# 2 Separate profile
 
-Some wallet call it accounts (based on BIP32) for example you can have a work and a home profile. It is important because you don't want to mix coins from different source with each other. A lot of wallet just showing your total balance which contains your salary, your donations, your payment to the landlord, lambo rentals. So when you are paying for the coffee you might end up paying that with your total salary because your wallet automatically selects the input coins and you have absolutely no control over that. You even cannot see that you have more coins. Bitcoin is not working like a bank account where you have a specific amount of money, bitcoin wallet has coins in it.
+For example you can have a work and a home profile, some wallet calls it accounts (based on BIP32). It is useful because you don't want mix your businesses, you want to handle them separately and keep them clean. A lot of wallet just showing your total balance which contains your salary, your donations, lambo rentals. So when you are paying for the coffee you might end up paying that with your total salary because your wallet automatically selects the input coins and you have absolutely no control over that. Usually you even cannot see that you have coins. You don't know which mask will be selected for the party. Bitcoin is not working like a bank account where you have a specific amount of money, bitcoin wallet has coins in it.
 
-There is a metric called wallet clustering where you find bitcoin addresses and certain evidence that the addresses owned by the same person. You use a bunch of assumptions and heuristic but if you established the clusters you can start watching transactions. When the advasory sees transactions going between these clusters, they can have privacy related informations:
-the time, the amounts, input and output and so on. 
+There is a metric called wallet clustering where you find bitcoin addresses and certain evidence that the addresses owned by the same person. You use a bunch of assumptions and heuristic but in the end you will have a set of addresses which is called a wallet cluster.
+Jonas Nick said: give me one of your SPV wallet address and I give back 70 percent of your wallet addresses. That means that every person who has at least one your addresses can estimate 70% of your total money, which is pretty scary.
 
 For example one powerful huristic is the Common-owner-input heuristic. Look at the following transaction, the most probable case is that someone want to buy something for 10 BTC. The heuristic says(szez) that A B C inputs belongs to the same person. If you compromised with address lets say C then A and B also connected to you. ABC now became the saem wallet cluster. So be careful how you consolidate / join together your coins!
 
 Wasabi does't have profiles instead it has coincontrol feature. Every coin you have is visble sparately. When you are sending bitcoin you can decide which coin will be the most apropriate regarding and the amount and the source of that coin! Labeling system is very useful here basically it is your own wallet cluster metric.
 
-3 P2P trade
+# 3 P2P trade
 
 Let's say your are about to make a transaction with your wallet. I put 3 different situations there.
 The first one is when your wallet just communicating with a central server and basically the server will do the job. It has all the information required and all the control. There were a lot of cases when these server got hacked and users lost a lot of money.
