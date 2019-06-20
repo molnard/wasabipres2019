@@ -19,9 +19,10 @@ Last time when I was abroad I had to pay with a 500 euro banknote. I was literal
 Privacy means that you can voluntairly share information but only if you want to! Privacy is the act of choosing what to reveal to the world.
 
 # But there is another greate benefit, a great glory behind,
+What if It told you: if you impove privacy than you will impove bitcoin as a money itself.
 
 Well if it would be an excange rate calculator it wouldn't be so useful. But now that has deeper meaning. 
-What if It told you: if you impove privacy than you will impove bitcoin as a money itself. Money has some axiomatic properties describes what is a good money: Acceptability, Portability, Durability, Divisibility, Fungiblitiy and so on.
+Money has some axiomatic properties describes what is a good money: Acceptability, Portability, Durability, Divisibility, Fungiblitiy and so on.
 Fungibility is the interchangablity of money. 1 EUR = 1 EUR. It does't matter where it came from. It does't matter if two ppl before you it was stolen. It is a euro. That euro is the same as every other euro. No one can say: I take that euro but I won't take that other one. Money is the one type of property that it cannot be stolen and recovered by the original owner. If you got robbed you can't say that is my money and give back two people later. You can say to the person who stole it from you but you can't just walk into a shop and say I am gonna sue you because you have the money that was stolen from me. The reason that we have fungiblity is very simple: otherwise money won"t work. Imagine that every time you receive a euro you have to check a centralized list if it is dirty, that's not working - it won't scale. In bitcoin we can see some companies trying to destroy fungiblity and that is a real problem. 
 
 1 - Trying to sell clean coins for more. for example Coinbase coins.
