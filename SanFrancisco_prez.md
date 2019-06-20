@@ -62,7 +62,7 @@ Wasabi does't have profiles instead it has coincontrol feature. Every coin you h
 # 3 P2P trade
 
 Let's say your are about to make a transaction with your wallet. I put 3 different situations there.
-The first one is when your wallet just communicating with a central server and basically the server will do the job. It has all the information required and all the control. There were a lot of cases when these server got hacked and users lost a lot of money.
+The first one is when your wallet just communicating with a central server and basically the server will do the job. It has all the information required and all the control. There were a lot of cases when these server got hacked and users lost a lot of money. There were more cases when the user was locked out from his wallet. 
 The second one when not the server but the protocol used being hacked. The wallet using their own protocol which can be defective. So there can be a middle man attack. 
 The 3rd problem is when there is no third party involved which is much better basically that is the P2P communication, but still the Node can spy on you.
 
