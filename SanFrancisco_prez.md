@@ -15,7 +15,7 @@ You can be an individual or you can be a business both need privacy for their pa
 
 I lyed. It is very important to them to not have privacy.
 
-Last time when I was abroad I had to pay with a 500 euro banknote. I was literally trying to hide during the payment because that amount of money can trigger someone. With bitcoin the amount and the number of prying eyes are much higher. 
+Last time when I was abroad I had to pay with a 500 euro banknote (it is more then 500 USD). I was literally trying to hide during the payment because that amount of money can trigger someone. With bitcoin the amount and the number of prying eyes are much higher. 
 Privacy means that you can voluntairly share information but only if you want to! Privacy is the act of choosing what to reveal to the world.
 
 # But there is another greate benefit, a great glory behind,
