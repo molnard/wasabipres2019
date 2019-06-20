@@ -31,12 +31,9 @@ Fungibility is the interchangablity of money. 1 EUR = 1 EUR. It does't matter wh
 
 We are building money with bitcoin so we need fungibility too, otherwise bitcoin will fail as a money and it will be useless.
 
-If we can provide easy (I mean cheap and fast) methods to impove fungibility we improve bitcoin as a money and we impove the privacy of ours!
-
 # How to be more fungible and more private in practice?
 
 Adam Gibson who is working on cryptography, bitcoin privacy, fungibility technology from the beginning, and most known as a developer of JoinMarket with Chris Belcher.
-Set up a list with 7 points. 7 most important rules to follow:
 
 So here is the list, I will give you couple of seconds to read through it.
 
@@ -57,7 +54,7 @@ Jonas Nick said: give me one of your SPV wallet address and I give back 70 perce
 
 For example one powerful huristic is the Common-owner-input heuristic. Look at the following transaction, the most probable case is that someone want to buy something for 10 BTC. The heuristic says(szez) that A B C inputs belongs to the same person. If you compromised with address lets say C then A and B also connected to you. ABC now became the saem wallet cluster. So be careful how you consolidate / join together your coins!
 
-Wasabi does't have profiles instead it has coincontrol feature. Every coin you have is visble sparately. When you are sending bitcoin you can decide which coin will be the most apropriate regarding and the amount and the source of that coin! Labeling system is very useful here basically it is your own wallet cluster metric.
+Wasabi does't have profiles instead it has coincontrol feature. Every coin you have is visible separately. When you are sending bitcoin you can decide which coin will be the most apropriate regarding and the amount and the source of that coin! Labeling system is very useful here basically it is your own wallet cluster metric.
 
 # 3 P2P trade
 
@@ -78,7 +75,7 @@ Wasabi using Client side filtering means that your client has a filter set local
 # 5 Use CoinJoin.
 
 We got privacy on the network level but we still don't have privacy on blockchain level. The transaction chain is our enemy.
-Here is Alice she has a potentially tainted coin. For example it is shes salary and she has a feeling that her boss is watching the emloyees addresses. 
+Here is Alice she has a potentially tainted coin. For example it is shes salary and she has a feeling that her boss is tracing the emloyees addresses. 
 Alice wants to break the chain of transactions and get rid of every heuristic. Now doing something 'celever' can be enough but who knows when there will be a heuristic that will find connection. SharedCoin failed like this, they did a lot of CoinJoin and later something called CoinJoin Sudoku partially or totally deanonimized all. So we need something which is provable. The base idea is: if the outputs are equal than amount analysis won't work. So we set up a minumum denomination 1 BTC. Every participants generate output addresses. 
 
 # 6 Avoid servers.
