@@ -40,7 +40,6 @@ So here is the list, I will give you couple of seconds to read through it.
 # 1 Address reuse
 
 Major privacy leak, known since whitepaper. Bitcoin is often described as an anonymous cryptocurrency, but this is incorrect. Bitcoin is actually pseudonymous. The distinction is crucial: under a cryptographic pseudonym, your behavior can still be tracked. 
-It is like a masquarade party. If you are using the same mask on every party sooner or later you will be compromised and with the global ledger all the things you did in the past immediately connected to you.
 Bitcoin addresses are pseudonyms you should throw it away after you used it.
 It a very common mistake as far as I know 30% of all transactions involve an address which is used before.
 Wasabi automatically removes used addresses.
@@ -76,7 +75,7 @@ Wasabi using Client side filtering means that your client has a filter set local
 
 We got privacy on the network level but we still don't have privacy on blockchain level. The transaction chain is our enemy.
 Here is Alice she has a potentially tainted coin. For example it is shes salary and she has a feeling that her boss is tracing the emloyees addresses. 
-Alice wants to break the chain of transactions and get rid of every heuristic. Now doing something 'celever' can be enough but who knows when there will be a heuristic that will find connection. SharedCoin failed like this, they did a lot of CoinJoin and later something called CoinJoin Sudoku partially or totally deanonimized all. So we need something which is provable. The base idea is: if the outputs are equal than amount analysis won't work. So we set up a minumum denomination 1 BTC. Every participants generate output addresses. 
+Alice wants to break the chain of transactions and get rid of every heuristic. Now doing something 'clever' can be enough but who knows when there will be a heuristic that will find connection. SharedCoin failed like this, they did a lot of CoinJoin and later something called CoinJoin Sudoku partially or totally deanonimized all. So we need something which is provable. The base idea is: if the outputs are equal than amount analysis won't work. So we set up a minumum denomination 1 BTC. Every participants generate output addresses. 
 
 # 6 Avoid servers.
 
